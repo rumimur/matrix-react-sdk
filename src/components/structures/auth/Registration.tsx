@@ -29,7 +29,6 @@ import AuthPage from "../../views/auth/AuthPage";
 import Login, { ISSOFlow } from "../../../Login";
 import dis from "../../../dispatcher/dispatcher";
 import SSOButtons from "../../views/elements/SSOButtons";
-import ServerPicker from '../../views/elements/ServerPicker';
 import { replaceableComponent } from "../../../utils/replaceableComponent";
 import RegistrationForm from '../../views/auth/RegistrationForm';
 import AccessibleButton from '../../views/elements/AccessibleButton';
@@ -603,12 +602,6 @@ export default class Registration extends React.Component<IProps, IState> {
                 <h2>{ _t('Create account') }</h2>
                 { errorText }
                 { serverDeadSection }
-                <ServerPicker
-                    title={_t("Host account on")}
-                    dialogTitle={_t("Decide where your account is hosted")}
-                    serverConfig={this.props.serverConfig}
-                    onServerConfigChange={this.state.doingUIAuth ? undefined : this.props.onServerConfigChange}
-                />
                 { this.renderRegisterComponent() }
                 { goBack }
                 { signIn }

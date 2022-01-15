@@ -34,7 +34,6 @@ import PasswordLogin from "../../views/auth/PasswordLogin";
 import InlineSpinner from "../../views/elements/InlineSpinner";
 import Spinner from "../../views/elements/Spinner";
 import SSOButtons from "../../views/elements/SSOButtons";
-import ServerPicker from "../../views/elements/ServerPicker";
 import { replaceableComponent } from "../../../utils/replaceableComponent";
 import AuthBody from "../../views/auth/AuthBody";
 import AuthHeader from "../../views/auth/AuthHeader";
@@ -604,10 +603,6 @@ export default class LoginComponent extends React.PureComponent<IProps, IState> 
                     </h2>
                     { errorTextSection }
                     { serverDeadSection }
-                    <ServerPicker
-                        serverConfig={this.props.serverConfig}
-                        onServerConfigChange={this.props.onServerConfigChange}
-                    />
                     { this.renderLoginComponentForFlows() }
                     { footer }
                 </AuthBody>
